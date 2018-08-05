@@ -1,0 +1,1374 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RadiusCore</name>
+    </assembly>
+    <members>
+        <member name="M:RadiusCore.SqlAccess.Logs.InsertLogger(RadiusCore.SqlAccess.Logs.StatCodes,System.String)">
+            <summary>
+            Inserts into the log in the database using the title as the log type
+            </summary>
+            <param name="LogType"></param>
+            <param name="LogMessage"></param>
+        </member>
+        <member name="M:RadiusCore.SqlAccess.Logs.InsertLogger(System.String,RadiusCore.SqlAccess.Logs.StatCodes,System.String)">
+            <summary>
+            Inserts into the log in the database
+            </summary>
+            <param name="LogType"></param>
+            <param name="LogMessage"></param>
+        </member>
+        <member name="T:RadiusCore.SqlAccess.Logs.StatCodes">
+            <summary>
+            Status codes for the Log
+            </summary>
+        </member>
+        <member name="F:RadiusCore.SqlAccess.Logs.StatCodes.Statistic">
+            <summary>
+            Statistical Data
+            </summary>
+        </member>
+        <member name="F:RadiusCore.SqlAccess.Logs.StatCodes.Info">
+            <summary>
+            Information
+            </summary>
+        </member>
+        <member name="F:RadiusCore.SqlAccess.Logs.StatCodes.Error">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="M:RadiusCore.SqlAccess.Logs.WriteAddText(System.String,System.String,System.String)">
+            <summary>
+            Writes a single line to a text file.
+            </summary>
+            <param name="LocalFilePath"></param>
+            <param name="FileName"></param>
+            <param name="fileText"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RadiusCore.SqlAccess.Logs.SetWriteProperty(System.String)">
+            <summary>
+            Removes the read only attribute .
+            Arguement must contain full path.
+            Returns true if property set is successful.
+            </summary>
+            <param name="FileName"></param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:RadiusCore.SqlAccess.SQL_Access">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:RadiusCore.SqlAccess.SQL_Access.ConnectionString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RadiusCore.SqlAccess.SQL_Access.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RadiusCore.SqlAccess.SQL_Access.QuerySQL(System.String,System.String@)">
+            <summary>
+            Run a query against the database. 
+            This can support select, update, delete, and other queries.
+            However, only a select will return a data table.
+            </summary>
+            <param name="SQLCommand"></param>
+            <param name="sqlStatus">Writes "Success" to variable or exception message</param>
+            <returns></returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:RadiusCore.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,RadiusCore.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:RadiusCore.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:RadiusCore.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:RadiusCore.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:RadiusCore.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:RadiusCore.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:RadiusCore.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:RadiusCore.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,RadiusCore.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,RadiusCore.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(RadiusCore.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:RadiusCore.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},RadiusCore.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="T:RadiusCore.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:RadiusCore.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:RadiusCore.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageSampleKey.#ctor(RadiusCore.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:RadiusCore.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:RadiusCore.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:RadiusCore.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,RadiusCore.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:RadiusCore.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:RadiusCore.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:RadiusCore.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:RadiusCore.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RadiusCore.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:RadiusCore.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:RadiusCore.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RadiusCore.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="T:RadiusCore.Controllers.IdentifierController">
+            <summary>
+            Identifiers are used to reference items that are enumerated or cross-referenced.
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Controllers.IdentifierController.Get">
+            <summary>
+            Returns the types of identifiers
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.IdentifierController.Get(System.String)">
+            <summary>
+            Gets the Values and Text representation for the Type specified.
+            </summary>
+            <param name="typeID">Type Specified</param>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.IdentifierController.Post(System.String,System.String,System.String,System.String)">
+            <summary>
+            Updates an existing Identifier.
+            </summary>
+            <param name="typeID">Type Specified</param>
+            <param name="oldValue">Old value to change</param>
+            <param name="value">Value to change to</param>
+            <param name="text">Text representation of the Value</param>
+        </member>
+        <member name="M:RadiusCore.Controllers.IdentifierController.Put(System.String,System.String,System.String)">
+            <summary>
+            Inserts a new value.
+            </summary>
+            <param name="typeID">Type Specified</param>
+            <param name="value">Value to add</param>
+            <param name="text">Text representation of the Value</param>
+        </member>
+        <member name="M:RadiusCore.Controllers.IdentifierController.Delete(System.String,System.String)">
+            <summary>
+            Deletes a Value and Text representation.
+            </summary>
+            <param name="typeID">Type Specified</param>
+            <param name="value">Value to delete</param>
+        </member>
+        <member name="T:RadiusCore.Controllers.LogsController">
+            <summary>
+            Logs associated with internal processes
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Controllers.LogsController.Get(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Returns the Source and Type list if all parameters are blank or the logs according to source and/or type. 
+            Excluded values indicates all.
+            </summary>
+            <param name="source"></param>
+            <param name="typeID"></param>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <param name="useTop"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.LogsController.Put(System.String,System.String,System.String,System.String)">
+            <summary>
+            Inserts a new Log. Excluding the timestamp will use the insert date.
+            </summary>
+            <param name="source"></param>
+            <param name="typeID"></param>
+            <param name="message"></param>
+            <param name="timeStamp"></param>
+        </member>
+        <member name="T:RadiusCore.Controllers.ObjectAssociatedPropertiesController">
+            <summary>
+            Get properties the are associated with a specific object as a parent
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Controllers.ObjectAssociatedPropertiesController.Get(System.String,System.String)">
+            <summary>
+            Get properties the are associated with a specific object as a parent.
+            objectTypeID is optional.
+            </summary>
+            <param name="objectID"></param>
+            <param name="objectTypeID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RadiusCore.Controllers.ObjectPropertiesController">
+            <summary>
+            Radius Object Properties
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Controllers.ObjectPropertiesController.Get(System.String,System.String,System.String)">
+            <summary>
+            Returns Returns a list of properties if all parameters are null, 
+            Properties associated with an Object, 
+            Properties associated with the Property Name.
+            </summary>
+            <param name="objectID"></param>
+            <param name="objectPropertyID"></param>
+            <param name="propertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.ObjectPropertiesController.Post(RadiusCore.Models.ObjectPropertyModel)">
+            <summary>
+            Update Property. Along with the required variables you must also supply the PropertyID.
+            </summary>
+            <param name="objProperty"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.ObjectPropertiesController.Put(RadiusCore.Models.ObjectPropertyModel)">
+            <summary>
+            Add new Property.
+            </summary>
+            <param name="objProperty"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.ObjectPropertiesController.Delete(System.String)">
+            <summary>
+            Deletes a Property based on ID
+            </summary>
+            <param name="propertyID"></param>
+        </member>
+        <member name="T:RadiusCore.Controllers.ObjectsController">
+            <summary>
+            Objects are anything that is configurable for presentation. 
+            They generally have a parent child relationship with other Objects. 
+            Objects should represent real world items. An example is a well. 
+            The well may have meter, device, tank, compressor, and many other Objects as children. 
+            The well Object has properties (ObjectProperties) only associated with that well such as the well name, 
+            pipeline company, status, and other properties specific to a well. The meter Object 
+            will have properties only associated with the meter such as the meter ID and device meter ID. 
+            It’s important to note that an Object can be anything including houses, cars, or any other potential IoT Objects. 
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Controllers.ObjectsController.Get(System.String)">
+            <summary>
+            Returns a list of available Objects
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.ObjectsController.Post(RadiusCore.Models.ObjectModel)">
+            <summary>
+            Update an Object. Along with the required variables you must also supply the ObjectID.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.ObjectsController.Put(RadiusCore.Models.ObjectModel)">
+            <summary>
+            Add new Object
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.ObjectsController.Delete(System.String)">
+            <summary>
+            Deletes an Object based on ID
+            </summary>
+            <param name="objectID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RadiusCore.Controllers.SignalHistoryController">
+            <summary>
+            Signal History
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Controllers.SignalHistoryController.Get(RadiusCore.Models.SignalHistoryRequestModel)">
+            <summary>
+            Returns the requested history based on the parameters. 
+            If nothing is passed, a list of available Tag Names is returned.
+            </summary>
+            <param name="historyRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RadiusCore.Controllers.SignalPropertyController">
+            <summary>
+            Signal Properties
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Controllers.SignalPropertyController.Get(System.String,System.String)">
+            <summary>
+            Returns a Signal Property set if signalID is set or a specific property if signalPropertyID is set. 
+            An empty Signal Property will be returned if neither are set.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.SignalPropertyController.Post(RadiusCore.Models.SignalPropertyModels)">
+            <summary>
+            Update Signal Property. Along with the required variables you must also supply the SignalPropertyID.
+            </summary>
+            <param name="objSignalProperty"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.SignalPropertyController.Put(RadiusCore.Models.SignalPropertyModels)">
+            <summary>
+            Add new Signal Property
+            </summary>
+            <param name="objSignalProperty"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.SignalPropertyController.Delete(System.String)">
+            <summary>
+            Deletes a Signal Property based on ID
+            </summary>
+            <param name="signalPropertyID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RadiusCore.Controllers.SignalsController">
+            <summary>
+            Signals operate off the concept that all PV's (process variables) can be reduced down to one thing. 
+            These are referred to as signals. A signal can represent any single IO or configuration point. 
+            Signals also recognize that a set point is treated the same as an IO point.
+            Signals should have properties associated to identify features specific to the signal such as an column name or OPC tag.
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Controllers.SignalsController.Get">
+            <summary>
+            Returns a list of available Signals
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.SignalsController.Get(System.String)">
+            <summary>
+            Returns a Signal based on ID
+            </summary>
+            <param name="signalID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.SignalsController.Post(RadiusCore.Models.SignalModel)">
+            <summary>
+            Update Signal. Along with the required variables you must also supply the SignalID. 
+            The History gets updated on every data change.
+            </summary>
+            <param name="objSignal"></param>
+        </member>
+        <member name="M:RadiusCore.Controllers.SignalsController.Put(RadiusCore.Models.SignalModel,System.String,System.String)">
+            <summary>
+            Adds a new Signal
+            </summary>
+            <param name="objSignal"></param>
+            <param name="recipeName"></param>
+            <param name="deviceID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RadiusCore.Controllers.SignalsController.Delete(System.String)">
+            <summary>
+            Deletes a Signal based on ID
+            </summary>
+            <param name="signalID"></param>
+        </member>
+        <member name="T:RadiusCore.Controllers.SignalViewController">
+            <summary>
+            Signal Views
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Controllers.SignalViewController.Get(System.String,System.String)">
+            <summary>
+            Returns the Views for the ID and/or group type.
+            TODO: Implement Username
+            </summary>
+            <param name="deviceID"></param>
+            <param name="groupType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RadiusCore.Controllers.SignalWriteController">
+            <summary>
+            Handle Signal Writes
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Controllers.SignalWriteController.Put(RadiusCore.Models.SignalWriteModel)">
+            <summary>
+            Writes a value to the signal
+            </summary>
+            <param name="writeValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RadiusCore.Models.ObjectModels">
+            <summary>
+            Radius Objects
+            </summary>
+        </member>
+        <member name="F:RadiusCore.Models.ObjectModels.RadiusObjects">
+            <summary>
+            List of Radius Objects
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Models.ObjectModels.#ctor">
+            <summary>
+            Creates new list
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Models.ObjectModel">
+            <summary>
+            Radius Object
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectModel.ObjectID">
+            <summary>
+            Object ID
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectModel.DisplayName">
+            <summary>
+            Display Name
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectModel.ObjectTypeID">
+            <summary>
+            Object Type ID used
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectModel.ObjectTypeValue">
+            <summary>
+            Object Type Value
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectModel.ObjectTypeText">
+            <summary>
+            Object Type Text used for display
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Models.ObjectPropertiesModels">
+            <summary>
+            Radius Objects
+            </summary>
+        </member>
+        <member name="F:RadiusCore.Models.ObjectPropertiesModels.RadiusObjectProperties">
+            <summary>
+            List of Radius Objects
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Models.ObjectPropertiesModels.#ctor">
+            <summary>
+            Creates new list
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Models.ObjectPropertyModel">
+            <summary>
+            Radius Object's Properties
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectPropertyModel.PropertyID">
+            <summary>
+            Property ID
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectPropertyModel.ObjectID">
+            <summary>
+            Object ID associated with the properties
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectPropertyModel.PropertyName">
+            <summary>
+            Property Name
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectPropertyModel.DisplayName">
+            <summary>
+            Display Value
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectPropertyModel.Value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectPropertyModel.DataTypeID">
+            <summary>
+            Data Type ID
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectPropertyModel.DataTypeText">
+            <summary>
+            Data Type Text
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectPropertyModel.DataTypeValue">
+            <summary>
+            Data Type Value
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectPropertyModel.WriteSecurityLevel">
+            <summary>
+            Write Security Level
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Models.ObjectAssociatedPropertiesModels">
+            <summary>
+            Radius Objects
+            </summary>
+        </member>
+        <member name="F:RadiusCore.Models.ObjectAssociatedPropertiesModels.RadiusObjectAssociatedProperties">
+            <summary>
+            List of Radius Associated Objects
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Models.ObjectAssociatedPropertiesModels.#ctor">
+            <summary>
+            Creates new list
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Models.ObjectAssociatedPropertyModel">
+            <summary>
+            Radius Associated Object's Properties
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectAssociatedPropertyModel.ObjectID">
+            <summary>
+            Object ID associated with the properties
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectAssociatedPropertyModel.DisplayName">
+            <summary>
+            Display Name
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectAssociatedPropertyModel.ObjectTypeID">
+            <summary>
+            Object Type ID
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectAssociatedPropertyModel.ObjectTypeText">
+            <summary>
+            Object Type Text
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.ObjectAssociatedPropertyModel.ObjectTypeValue">
+            <summary>
+            Object Type Value
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Models.SignalModels">
+            <summary>
+            Signals
+            </summary>
+        </member>
+        <member name="F:RadiusCore.Models.SignalModels.Signals">
+            <summary>
+            List of Signals
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Models.SignalModels.#ctor">
+            <summary>
+            Creates new list
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Models.SignalModel">
+            <summary>
+            Signal 
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalModel.SignalID">
+            <summary>
+            Signal ID
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalModel.DeviceID">
+            <summary>
+            Reference ID. 
+            Used to reference a group of signals that belong to a group.
+            An example would be to group a list of signals together that belong to a device.
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalModel.DataTypeID">
+            <summary>
+            Data Type ID
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalModel.DataTypeText">
+            <summary>
+            Data Type Text
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalModel.DataTypeValue">
+            <summary>
+            Data Type Value
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalModel.SourceID">
+            <summary>
+            Source ID
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalModel.SourceText">
+            <summary>
+            Source Text
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalModel.SourceValue">
+            <summary>
+            Source Value
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalModel.TagName">
+            <summary>
+            Tag Name
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalModel.DisplayName">
+            <summary>
+            Display Name
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalModel.TimeStamp">
+            <summary>
+            TimeStamp
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalModel.RawValue">
+            <summary>
+            Raw Value
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalModel.Enabled">
+            <summary>
+            Enabled
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Models.SignalViewModels">
+            <summary>
+            SignalViews
+            </summary>
+        </member>
+        <member name="F:RadiusCore.Models.SignalViewModels.SignalViews">
+            <summary>
+            List of SignalViews
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Models.SignalViewModels.#ctor">
+            <summary>
+            Creates new list
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Models.SignalViewModel">
+            <summary>
+            SignalView 
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Models.SignalViewModel.#ctor">
+            <summary>
+            Creates new list
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.SignalID">
+            <summary>
+            SignalID
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.InputSource">
+            <summary>
+            InputSource
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.OutputSource">
+            <summary>
+            OutputSource
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.TagName">
+            <summary>
+            TagName
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.DisplayName">
+            <summary>
+            DisplayName
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.ViewDisplayName">
+            <summary>
+            ViewDisplayName
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.TimeStamp">
+            <summary>
+            TimeStamp
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.RawValue">
+            <summary>
+            RawValue
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.Source">
+            <summary>
+            Source
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.Enabled">
+            <summary>
+            Enabled
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.ItemDataType">
+            <summary>
+            ItemDataType
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.CommChannel">
+            <summary>
+            CommChannel
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.EnableScaling">
+            <summary>
+            EnableScaling
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.EU_Min">
+            <summary>
+            EU_Min
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.EU_Max">
+            <summary>
+            EU_Max
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.RawMin">
+            <summary>
+            RawMin
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.RawMax">
+            <summary>
+            RawMax
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.MinValue">
+            <summary>
+            MinValue
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.MaxValue">
+            <summary>
+            MaxValue
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.Precision">
+            <summary>
+            Precision
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.Quality">
+            <summary>
+            Quality
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.Units">
+            <summary>
+            Units
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.WriteSecurityLevel">
+            <summary>
+            WriteSecurityLevel
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.EnumLookupValue">
+            <summary>
+            EnumLookupValue
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalViewModel.EnumValues">
+            <summary>
+            EnumValues
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Models.SignalWriteModel">
+            <summary>
+            SignalView 
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalWriteModel.UserName">
+            <summary>
+            UserName
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalWriteModel.SignalID">
+            <summary>
+            SignalID
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalWriteModel.Value">
+            <summary>
+            RawValue
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalWriteModel.Source">
+            <summary>
+            Source
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalWriteModel.Comments">
+            <summary>
+            Comments
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Models.SignalHistoryModel">
+            <summary>
+            Signal History
+            </summary>
+        </member>
+        <member name="F:RadiusCore.Models.SignalHistoryModel.SignalHistory">
+            <summary>
+            Signal History
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Models.SignalHistoryModel.#ctor">
+            <summary>
+            Signal History
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Models.SignalHistoryPointModel">
+            <summary>
+            Signal History Point
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalHistoryPointModel.TagName">
+            <summary>
+            Tag Name
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalHistoryPointModel.SignalID">
+            <summary>
+            Signal ID
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalHistoryPointModel.SignalTimeStamp">
+            <summary>
+            Signal Time Stamp
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalHistoryPointModel.InsertTimeStamp">
+            <summary>
+            Insert Time Stamp
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalHistoryPointModel.Value">
+            <summary>
+            Value
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalHistoryRequestModel.SelectTop">
+            <summary>
+            Select Top
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalHistoryRequestModel.StartDate">
+            <summary>
+            Start Date
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalHistoryRequestModel.EndDate">
+            <summary>
+            End Date
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalHistoryRequestModel.TagName">
+            <summary>
+            Tag Name
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalHistoryRequestModel.SignalID">
+            <summary>
+            Signal ID
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Models.SignalPropertiesModels">
+            <summary>
+            Signal Properties
+            </summary>
+        </member>
+        <member name="F:RadiusCore.Models.SignalPropertiesModels.Signals">
+            <summary>
+            List of Signal Properites
+            </summary>
+        </member>
+        <member name="M:RadiusCore.Models.SignalPropertiesModels.#ctor">
+            <summary>
+            Creates new list
+            </summary>
+        </member>
+        <member name="T:RadiusCore.Models.SignalPropertyModels">
+            <summary>
+            Signal Property
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalPropertyModels.SignalPropertyID">
+            <summary>
+            Signal ID
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalPropertyModels.SignalID">
+            <summary>
+            Signal ID
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalPropertyModels.PropertyName">
+            <summary>
+            Data Type ID
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalPropertyModels.DisplayName">
+            <summary>
+            Data Type Text
+            </summary>
+        </member>
+        <member name="P:RadiusCore.Models.SignalPropertyModels.PropertyValue">
+            <summary>
+            Data Type Value
+            </summary>
+        </member>
+    </members>
+</doc>
