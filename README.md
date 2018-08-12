@@ -2,9 +2,9 @@
 Thank you for your interest in the Radius HMI Core Application. ___We take pull requests!___
 
 ## Introduction
-Radius Core is a component of the Radius HMI application. The Radius Core is what provides the gateway to other Radius Plugins, interface, and/or any other external component.
+Radius Core is a component of the Radius HMI application. The Radius Core is what provides the gateway to other Radius Plugins, interface, and/or any other external component. 
 
-![Radius HMI Core](https://github.com/Radius-HMI/RadiusCore/blob/master/Documents/Images/RadiusUserOverviewCore.png)
+API documentation is included in the ASP.Net solution. Once deployed, navigate to the IIS location using a web browser for API documentation.
 
 ## Installation
 ### Prerequisites
