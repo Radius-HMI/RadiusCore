@@ -1,5 +1,5 @@
 # Radius Core
-Thank you for your interest in the Radius HMI Core Application. ___We take pull requests!___
+Thank you for your interest in the Radius HMI Core Application. Feel free to reference the Wiki for more information on the application. ___We take pull requests!___
 
 ## Introduction
 Radius Core is a component of the Radius HMI application. The Radius Core is what provides the gateway to other Radius Plugins, interface, and/or any other external component. 
