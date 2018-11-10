@@ -1,7 +1,4 @@
 {
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=_CHANGE_ME;Trusted_Connection=True;MultipleActiveResultSets=true"
-  },
   "MongoDB_Configuration": {
     "ConnectionString": "mongodb://localhost:27017",
     "DatabaseName": "RadiusHMI-Dev"

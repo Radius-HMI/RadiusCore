@@ -11,14 +11,16 @@ using System.Threading.Tasks;
 namespace RadiusCore.MongoDB
 {
     /// <summary>
-    /// Maintenance Object for Collection Creation and trimming
+    /// Maintenance Object for collection trimming and index creation
     /// </summary>
     public class Maintenance
     {
+        readonly MongoClient _client;
+        readonly IMongoDatabase _db;
         private readonly MongoDBCollections _mongoDBCollections;
 
         /// <summary>
-        /// Collection Configuration according to appsettings.json
+        /// Collection configuration according to appsettings.json
         /// </summary>
         /// <param name="mongoDBCollections"></param>
         public Maintenance(MongoDBCollections mongoDBCollections)
@@ -28,9 +30,10 @@ namespace RadiusCore.MongoDB
             _db = _client.GetDatabase(CustomAppSettings.Settings["MongoDB_Configuration:DatabaseName"]);
         }
 
-        readonly MongoClient _client;
-        readonly IMongoDatabase _db;
-
+        /// <summary>
+        /// Build any collection indexes configured
+        /// </summary>
+        /// <returns></returns>
         public async Task BuildIndexesAsync()
         {
             foreach(string collection in _mongoDBCollections.Collections.Keys)

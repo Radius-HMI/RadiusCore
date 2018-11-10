@@ -7,164 +7,59 @@ using System.Threading.Tasks;
 namespace RadiusCore.Models
 {
     /// <summary>
-    /// Radius Objects
+    /// Radius HMI Objects
     /// </summary>
-    public class ObjectModels
+    public class RadObjectModels
     {
         /// <summary>
-        /// List of Radius Objects
+        /// List of Radius HMI Objects
         /// </summary>
-        public List<ObjectModel> RadiusObjects;
+        public Dictionary<Guid, RadObjectModel> RadiusObjects;
 
         /// <summary>
-        /// Creates new list
+        /// Dictionary of Radius HMI Objects. Key = ID
         /// </summary>
-        public ObjectModels()
+        public RadObjectModels()
         {
-            RadiusObjects = new List<ObjectModel>();
+            RadiusObjects = new Dictionary<Guid, RadObjectModel>();
         }
     }
 
     /// <summary>
-    /// Radius Object
+    /// Radius HMI Object
     /// </summary>
-    public class ObjectModel
+    public class RadObjectModel
     {
         /// <summary>
         /// Object ID
         /// </summary>
-        public string ObjectID { get; set; }
+        public Guid ID { get; set; }
         /// <summary>
         /// Display Name
         /// </summary>
-        public string DisplayName { get; set; }
+        public string Text { get; set; }
         /// <summary>
         /// Object Type ID used
         /// </summary>
-        public string ObjectTypeID { get; set; }
+        public Guid Type { get; set; }
         /// <summary>
-        /// Object Type Value
+        /// Properties associated with the Radius Object
         /// </summary>
-        public string ObjectTypeValue { get; set; }
+        public List<RadObjectPropertyModel> Properties { get; set; }
         /// <summary>
-        /// Object Type Text used for display
+        /// Write Security groups on the object
         /// </summary>
-        public string ObjectTypeText { get; set; }
+        public List<RadIdentifierModel> WriteSecurityLevel { get; set; }
     }
 
     /// <summary>
-    /// Radius Objects
+    /// Radius HMI Object's Properties
     /// </summary>
-    public class ObjectPropertiesModels
+    public class RadObjectPropertyModel : RadIdentifierModel
     {
         /// <summary>
-        /// List of Radius Objects
+        /// Write Security groups on the object properties
         /// </summary>
-        public List<ObjectPropertyModel> RadiusObjectProperties;
-
-        /// <summary>
-        /// Creates new list
-        /// </summary>
-        public ObjectPropertiesModels()
-        {
-            RadiusObjectProperties = new List<ObjectPropertyModel>();
-        }
-    }
-
-    /// <summary>
-    /// Radius Object's Properties
-    /// </summary>
-    public class ObjectPropertyModel
-    {
-        /// <summary>
-        /// Property ID
-        /// </summary>
-        public string PropertyID { get; set; }
-        /// <summary>
-        /// Object ID associated with the properties
-        /// </summary>
-        [Required]
-        public string ObjectID { get; set; }
-        /// <summary>
-        /// Property Name
-        /// </summary>
-        [Required]
-        public string PropertyName { get; set; }
-        /// <summary>
-        /// Display Value
-        /// </summary>
-        [Required]
-        public string DisplayName { get; set; }
-        /// <summary>
-        /// Value
-        /// </summary>
-        public string Value { get; set; }
-        /// <summary>
-        /// Data Type ID
-        /// </summary>
-        [Required]
-        public string DataTypeID { get; set; }
-        /// <summary>
-        /// Data Type Text
-        /// </summary>
-        public string DataTypeText { get; set; }
-        /// <summary>
-        /// Data Type Value
-        /// </summary>
-        public string DataTypeValue { get; set; }
-        /// <summary>
-        /// Write Security Level
-        /// </summary>
-        [Required]
-        public string WriteSecurityLevel { get; set; }
-    }
-
-    /// <summary>
-    /// Radius Objects
-    /// </summary>
-    public class ObjectAssociatedPropertiesModels
-    {
-        /// <summary>
-        /// List of Radius Associated Objects
-        /// </summary>
-        public List<ObjectAssociatedPropertyModel> RadiusObjectAssociatedProperties;
-
-        /// <summary>
-        /// Creates new list
-        /// </summary>
-        public ObjectAssociatedPropertiesModels()
-        {
-            RadiusObjectAssociatedProperties = new List<ObjectAssociatedPropertyModel>();
-        }
-    }
-
-    /// <summary>
-    /// Radius Associated Object's Properties
-    /// </summary>
-    public class ObjectAssociatedPropertyModel
-    {
-        /// <summary>
-        /// Object ID associated with the properties
-        /// </summary>
-        [Required]
-        public string ObjectID { get; set; }
-        /// <summary>
-        /// Display Name
-        /// </summary>
-        [Required]
-        public string DisplayName { get; set; }
-        /// <summary>
-        /// Object Type ID
-        /// </summary>
-        [Required]
-        public string ObjectTypeID { get; set; }
-        /// <summary>
-        /// Object Type Text
-        /// </summary>
-        public string ObjectTypeText { get; set; }
-        /// <summary>
-        /// Object Type Value
-        /// </summary>
-        public string ObjectTypeValue { get; set; }
+        public List<RadIdentifierModel> WriteSecurityGroups { get; set; }
     }
 }
