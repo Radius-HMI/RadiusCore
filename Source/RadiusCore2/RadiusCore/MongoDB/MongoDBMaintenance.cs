@@ -13,21 +13,17 @@ namespace RadiusCore.MongoDB
     /// <summary>
     /// Maintenance Object for collection trimming and index creation
     /// </summary>
-    public class Maintenance
+    public class MongoDBMaintenance : MongoDBConnection
     {
-        readonly MongoClient _client;
-        readonly IMongoDatabase _db;
         private readonly MongoDBCollections _mongoDBCollections;
 
         /// <summary>
         /// Collection configuration according to appsettings.json
         /// </summary>
         /// <param name="mongoDBCollections"></param>
-        public Maintenance(MongoDBCollections mongoDBCollections)
+        public MongoDBMaintenance(MongoDBCollections mongoDBCollections)
         {
             _mongoDBCollections = mongoDBCollections;
-            _client = new MongoClient(CustomAppSettings.Settings["MongoDB_Configuration:ConnectionString"]);
-            _db = _client.GetDatabase(CustomAppSettings.Settings["MongoDB_Configuration:DatabaseName"]);
         }
 
         /// <summary>

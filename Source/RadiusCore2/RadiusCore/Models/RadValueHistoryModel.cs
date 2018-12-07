@@ -27,10 +27,6 @@ namespace RadiusCore.Models
         /// </summary>
         public string TimeStamp { get; set; }
         /// <summary>
-        /// Insert Time Stamp
-        /// </summary>
-        public string InsertTimeStamp { get; set; }
-        /// <summary>
         /// Value
         /// </summary>
         public string Value { get; set; }

@@ -24,7 +24,7 @@ namespace RadiusCore.Controllers
         {
             string value1 = CustomAppSettings.Settings["MongoDB_Configuration:ConnectionString"];
             string value2 = CustomAppSettings.Settings["MongoDB_Configuration:DatabaseName"];
-            Maintenance build = new Maintenance(_myConfiguration);
+            MongoDBMaintenance build = new MongoDBMaintenance(_myConfiguration);
             await build.BuildIndexesAsync();
 
 

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RadiusCore.Models
 {/// <summary>
@@ -23,7 +21,6 @@ namespace RadiusCore.Models
             Signals = new Dictionary<Guid, RadValueModel>();
         }
     }
-  
 
     /// <summary>
     /// Radius HMI Values
@@ -31,47 +28,56 @@ namespace RadiusCore.Models
     public class RadValueModel
     {
         /// <summary>
-        /// Object ID
+        /// Thing ID
         /// </summary>
         [Required]
         public Guid ID { get; set; }
+
         /// <summary>
-        /// Object ID
+        /// Thing ID
         /// </summary>
         [Required]
-        public Guid ObjectID { get; set; }
+        public Guid ThingID { get; set; }
+
         /// <summary>
         /// Process Value representation - Also known as Tag Name
         /// </summary>
         [Required]
         public Guid PV { get; set; }
+
         /// <summary>
         /// Display Name
         /// </summary>
         [Required]
         public string Text { get; set; }
+
         /// <summary>
-        /// Properties associated with the Radius Object
+        /// Properties associated with the Radius Thing
         /// </summary>
-        public List<RadObjectPropertyModel> Properties { get; set; }
+        public List<RadThingPropertyModel> Properties { get; set; }
+
         /// <summary>
         /// DataType
         /// </summary>
         public Guid DataType { get; set; }
+
         /// <summary>
         /// Source of data
         /// </summary>
         [Required]
         public Guid Source { get; set; }
+
         /// <summary>
         /// Value of data point
         /// </summary>
         public string Value { get; set; }
+
         /// <summary>
         /// TimeStamp
         /// </summary>
         [Required]
         public DateTime TimeStamp { get; set; }
+
         /// <summary>
         /// Enabled
         /// </summary>
@@ -85,7 +91,7 @@ namespace RadiusCore.Models
     public class RadValuePropertyModel : RadIdentifierModel
     {
         /// <summary>
-        /// Write Security groups on the object properties
+        /// Write Security groups on the Thing properties
         /// </summary>
         public List<RadIdentifierModel> WriteSecurityGroups { get; set; }
     }

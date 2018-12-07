@@ -1,64 +1,65 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RadiusCore.Models
 {
     /// <summary>
-    /// Radius HMI Objects
+    /// Radius HMI Things
     /// </summary>
-    public class RadObjectModels
+    public class RadThingsModel
     {
         /// <summary>
-        /// List of Radius HMI Objects
+        /// List of Radius HMI Things
         /// </summary>
-        public Dictionary<Guid, RadObjectModel> RadiusObjects;
+        public Dictionary<Guid, RadThingModel> RadiusThings;
 
         /// <summary>
-        /// Dictionary of Radius HMI Objects. Key = ID
+        /// Dictionary of Radius HMI Things. Key = ID
         /// </summary>
-        public RadObjectModels()
+        public RadThingsModel()
         {
-            RadiusObjects = new Dictionary<Guid, RadObjectModel>();
+            RadiusThings = new Dictionary<Guid, RadThingModel>();
         }
     }
 
     /// <summary>
-    /// Radius HMI Object
+    /// Radius HMI Thing. Represents real world objects
     /// </summary>
-    public class RadObjectModel
+    public class RadThingModel
     {
         /// <summary>
-        /// Object ID
+        /// Thing ID
         /// </summary>
         public Guid ID { get; set; }
+
         /// <summary>
         /// Display Name
         /// </summary>
         public string Text { get; set; }
+
         /// <summary>
-        /// Object Type ID used
+        /// Thing Type ID used
         /// </summary>
         public Guid Type { get; set; }
+
         /// <summary>
-        /// Properties associated with the Radius Object
+        /// Properties associated with the Radius Thing
         /// </summary>
-        public List<RadObjectPropertyModel> Properties { get; set; }
+        public List<RadThingPropertyModel> Properties { get; set; }
+
         /// <summary>
-        /// Write Security groups on the object
+        /// Write Security groups on the Thing
         /// </summary>
         public List<RadIdentifierModel> WriteSecurityLevel { get; set; }
     }
 
     /// <summary>
-    /// Radius HMI Object's Properties
+    /// Radius HMI Thing's Properties
     /// </summary>
-    public class RadObjectPropertyModel : RadIdentifierModel
+    public class RadThingPropertyModel : RadIdentifierModel
     {
         /// <summary>
-        /// Write Security groups on the object properties
+        /// Write Security groups on the Thing properties
         /// </summary>
         public List<RadIdentifierModel> WriteSecurityGroups { get; set; }
     }
