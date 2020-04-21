@@ -1,0 +1,6 @@
+{
+  "MongoDB_Configuration": {
+    "ConnectionString": "mongodb://localhost:27017",
+    "DatabaseName": "RadiusHMI-Dev"
+  }
+}
