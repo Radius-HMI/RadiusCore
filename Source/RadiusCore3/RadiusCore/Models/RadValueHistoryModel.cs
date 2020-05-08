@@ -1,26 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RadiusCore.Models
 {
     public class RadValueHistoryModel
     {
+
+        [Required]
+        public string ID { get; set; } = Guid.NewGuid().ToString();
         /// <summary>
         /// Value ID referenced by the Radius HMI Value
         /// </summary>
         [Required]
-        public Guid ValueID { get; set; }
+        public string ValueID { get; set; }
         /// <summary>
         /// Process Value representation - Also known as Tag Name
         /// </summary>
         [Required]
-        public Guid PV { get; set; }
+        public string PV { get; set; }
         /// <summary>
         /// Signal ID
         /// </summary>
+        [Required]
         public string SignalID { get; set; }
         /// <summary>
         /// Value Time Stamp

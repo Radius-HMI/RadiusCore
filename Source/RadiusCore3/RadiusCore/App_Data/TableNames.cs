@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RadiusCore.MongoDB
+namespace RadiusCore.App_Data
 {
     public static class TableNames
     {

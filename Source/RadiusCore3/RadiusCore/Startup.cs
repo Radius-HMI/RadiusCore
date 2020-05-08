@@ -11,7 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using RadiusCore.Models;
-using RadiusCore.MongoDB;
+using RadiusCore.App_Data;
 using RadiusCore.Settings;
 
 namespace RadiusCore

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace RadiusCore.Models
 {
@@ -11,14 +12,14 @@ namespace RadiusCore.Models
         /// <summary>
         /// List of Radius HMI Things
         /// </summary>
-        public Dictionary<Guid, RadThingModel> RadiusThings;
+        public Dictionary<string, RadThingModel> RadiusThings;
 
         /// <summary>
         /// Dictionary of Radius HMI Things. Key = ID
         /// </summary>
         public RadThingsModel()
         {
-            RadiusThings = new Dictionary<Guid, RadThingModel>();
+            RadiusThings = new Dictionary<string, RadThingModel>();
         }
     }
 
@@ -31,7 +32,8 @@ namespace RadiusCore.Models
         /// <summary>
         /// Thing ID
         /// </summary>
-        public Guid ID { get; set; } = Guid.NewGuid();
+        [Required]
+        public string ID { get; set; } = Guid.NewGuid().ToString();
 
         /// <summary>
         /// Display Name
@@ -41,7 +43,7 @@ namespace RadiusCore.Models
         /// <summary>
         /// Thing Type ID used
         /// </summary>
-        public Guid Type { get; set; }
+        public string TypeID { get; set; }
 
         /// <summary>
         /// Properties associated with the Radius Thing
@@ -51,7 +53,7 @@ namespace RadiusCore.Models
         /// <summary>
         /// Write Security groups on the Thing
         /// </summary>
-        public List<RadIdentifierModel> WriteSecurityLevel { get; set; }
+        public List<RadIdentifierModel> WriteSecurityLevel { get; set; } = new List<RadIdentifierModel>();
     }
 
     /// <summary>
@@ -63,5 +65,6 @@ namespace RadiusCore.Models
         /// Write Security groups on the Thing properties
         /// </summary>
         public List<RadIdentifierModel> WriteSecurityGroups { get; set; }
+        public string TypeID { get; set; }
     }
 }

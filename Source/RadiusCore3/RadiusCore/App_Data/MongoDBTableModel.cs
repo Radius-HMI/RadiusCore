@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace RadiusCore.MongoDB
+namespace RadiusCore.App_Data
 {
     public class MongoDBCollections
     {

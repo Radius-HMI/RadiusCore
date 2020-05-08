@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using System.IO;
 using Newtonsoft.Json;
-using RadiusCore.MongoDB;
+using RadiusCore.App_Data;
 
 namespace RadiusCore.Settings
 {

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace RadiusCore.Models
 {
@@ -10,8 +8,9 @@ namespace RadiusCore.Models
     /// </summary>
     public class RadIdentifierModel
     {
-        public Guid ID { get; set; }
-        public string Text { get; set; }
+        [Required]
+        public string ID { get; set; } = Guid.NewGuid().ToString();
         public string Value { get; set; }
+        public string Category { get; set; }
     }
 }

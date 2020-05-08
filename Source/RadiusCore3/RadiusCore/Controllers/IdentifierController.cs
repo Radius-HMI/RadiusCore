@@ -1,45 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RadiusCore.App_Data;
 using RadiusCore.Models;
-using MongoDB.Bson;
 using Newtonsoft.Json;
 
 namespace RadiusCore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ThingController : ControllerBase
+    public class IdentifierController : ControllerBase
     {
         DatabaseAccess _databaseAccess = new DatabaseAccess();
         // GET: api/Object
         [HttpGet]
         public async Task<string> Get()
         {
-            return JsonConvert.SerializeObject(await _databaseAccess.GetThingAsync(string.Empty));
+            return JsonConvert.SerializeObject(await _databaseAccess.GetIdentifiersAsync(string.Empty));
         }
 
         // GET: api/Object/5
         [HttpGet("{id}")]
         public async Task<string> Get(string id)
         {
-            return JsonConvert.SerializeObject(await _databaseAccess.GetThingAsync(id));
+            return JsonConvert.SerializeObject(await _databaseAccess.GetIdentifiersAsync(id));
         }
-
 
         // POST: api/Object
         [HttpPost]
-        public async Task<IActionResult> Post(RadThingModel thing)
+        public async Task<IActionResult> Post(RadIdentifierModel identifier)
         {
             try
             {
-                if (await _databaseAccess.UpdateThingAsync(thing))
+                if (await _databaseAccess.UpdateIdentifierAsync(identifier))
                 {
-                    return Ok(JsonConvert.SerializeObject(thing));
+                    return Ok(JsonConvert.SerializeObject(identifier));
                 }
                 else
                 {
@@ -52,7 +48,6 @@ namespace RadiusCore.Controllers
             }
         }
 
-
         // PUT: api/Object/5
         [HttpPut()]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -61,28 +56,10 @@ namespace RadiusCore.Controllers
         {
             try
             {
-                RadThingModel thing = new RadThingModel();
-                RadThingPropertyModel newProperty = new RadThingPropertyModel()
-                {
-                    ID = Guid.NewGuid().ToString(),
-                    Value = "New property",
-                    TypeID = "Need ID"
-                };
-                thing.WriteSecurityLevel.Add(new RadIdentifierModel()
-                {
-                    ID = Guid.NewGuid().ToString(),
-                    Value = "New Security Group"
-                });
-                RadIdentifierModel securityGroup = new RadIdentifierModel()
-                {
-                    ID = Guid.NewGuid().ToString(),
-                    Value = "New Security Group"
-                };
-                newProperty.WriteSecurityGroups = new List<RadIdentifierModel>() { securityGroup };
-                thing.Properties.Add(newProperty);
+                RadIdentifierModel identifier = new RadIdentifierModel(){Value = "Unknown"};
                 DatabaseAccess data = new DatabaseAccess();
-                await data.PutThingAsync(thing);
-                return CreatedAtAction(nameof(Put), new { id = thing.ID }, JsonConvert.SerializeObject(thing));
+                await data.PutIdentifierAsync(identifier);
+                return CreatedAtAction(nameof(Put), new { id = identifier.ID }, JsonConvert.SerializeObject(identifier));
             }
             catch (Exception ex)
             {
@@ -110,28 +87,28 @@ namespace RadiusCore.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(ex.ToString());
             }
         }
-
+        
         // DELETE: api/ApiWithActions/5
-        [HttpDelete("{thingID}")]
+        [HttpDelete("{identifierID}")]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> Delete(string thingID)
+        public async Task<IActionResult> Delete(string identifierID)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(thingID))
+                if (string.IsNullOrWhiteSpace(identifierID))
                 {
                     return NoContent();
                 }
                 DatabaseAccess data = new DatabaseAccess();
-                if(await data.DeleteThingAsync(thingID)){
+                if(await data.DeleteIdentifierAsync(identifierID)){
                     return Accepted();
                 }
                 else{
-                    return BadRequest("Unable to delete " + thingID);
+                    return BadRequest("Unable to delete " + identifierID);
                 }
             }
             catch (Exception ex)

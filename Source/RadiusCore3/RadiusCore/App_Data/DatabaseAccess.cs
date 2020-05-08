@@ -1,5 +1,4 @@
 ﻿using RadiusCore.Models;
-using RadiusCore.MongoDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,15 +38,14 @@ namespace RadiusCore.App_Data
         /// <summary>
         /// Get a Radius HMI Thing
         /// </summary>
-        /// <param name="thingID"></param>
-        /// <param name="typeID"></param>
+        /// <param name="identifierID"></param>
         /// <returns></returns>
-        public async Task<RadThingsModel> GetThingAsync(Guid thingID)
+        public async Task<RadThingsModel> GetThingAsync(string identifierID)
         {
             switch (_database)
             {
                 case Databases.MongoDB:
-                    return await _mongo.GetThingAsync(thingID);
+                    return await _mongo.GetThingAsync(identifierID);
                 default:
                     return null;
             }
@@ -56,10 +54,9 @@ namespace RadiusCore.App_Data
         /// <summary>
         /// Get Radius HMI Things
         /// </summary>
-        /// <param name="thingID"></param>
         /// <param name="typeID"></param>
         /// <returns></returns>
-        public async Task<RadThingsModel> GetThingsAsync(Guid typeID)
+        public async Task<RadThingsModel> GetThingsAsync(string typeID)
         {
             switch (_database)
             {
@@ -73,18 +70,91 @@ namespace RadiusCore.App_Data
         /// <summary>
         /// Get Radius HMI Things
         /// </summary>
-        /// <param name="thingID"></param>
-        /// <param name="typeID"></param>
+        /// <param name="identifier"></param>
         /// <returns></returns>
-        public async Task PutThingAsync(RadThingModel thing)
+        public async Task PutThingAsync(RadThingModel identifier)
         {
             switch (_database)
             {
                 case Databases.MongoDB:
-                    await _mongo.AddThingAsync(thing);
+                    await _mongo.AddThingAsync(identifier);
                     break;
                 default:
                     break;
+            }
+        }
+
+        public async Task<bool> UpdateThingAsync(RadThingModel identifier){
+            switch (_database)
+            {
+                case Databases.MongoDB:
+                    return await _mongo.UpdateThingAsync(identifier);
+                default:
+                    return false;
+            }
+        }
+
+        
+        public async Task<bool> DeleteThingAsync(string identifierID){
+            switch (_database)
+            {
+                case Databases.MongoDB:
+                    return await _mongo.DeleteThingAsync(identifierID);
+                default:
+                    return false;
+            }
+        }
+
+        /// <summary>
+        /// Get Radius HMI Identifiers
+        /// </summary>
+        /// <param name="identifierID"></param>
+        /// <returns></returns>
+        public async Task<List<RadIdentifierModel>> GetIdentifiersAsync(string identifierID)
+        {
+            switch (_database)
+            {
+                case Databases.MongoDB:
+                    return await _mongo.GetIdentifiersAsync(identifierID);
+                default:
+                    return null;
+            }
+        }
+
+        /// <summary>
+        /// Get Radius HMI Identifier
+        /// </summary>
+        /// <param name="identifier"></param>
+        /// <returns></returns>
+        public async Task PutIdentifierAsync(RadIdentifierModel identifier)
+        {
+            switch (_database)
+            {
+                case Databases.MongoDB:
+                    await _mongo.AddIdentifierAsync(identifier);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        public async Task<bool> UpdateIdentifierAsync(RadIdentifierModel identifier){
+            switch (_database)
+            {
+                case Databases.MongoDB:
+                    return await _mongo.UpdateIdentifierAsync(identifier);
+                default:
+                    return false;
+            }
+        }
+        
+        public async Task<bool> DeleteIdentifierAsync(string identifierID){
+            switch (_database)
+            {
+                case Databases.MongoDB:
+                    return await _mongo.DeleteIdentifierAsync(identifierID);
+                default:
+                    return false;
             }
         }
 

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RadiusCore.MongoDB
+namespace RadiusCore.App_Data
 {
     /// <summary>
     /// Maintenance Object for collection trimming and index creation

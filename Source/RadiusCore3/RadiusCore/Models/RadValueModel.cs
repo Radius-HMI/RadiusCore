@@ -11,14 +11,14 @@ namespace RadiusCore.Models
         /// <summary>
         /// List of Signals
         /// </summary>
-        public Dictionary<Guid, RadValueModel> Signals;
+        public Dictionary<String, RadValueModel> Signals;
 
         /// <summary>
         /// Creates new list
         /// </summary>
         public RadValueModels()
         {
-            Signals = new Dictionary<Guid, RadValueModel>();
+            Signals = new Dictionary<String, RadValueModel>();
         }
     }
 
@@ -27,23 +27,26 @@ namespace RadiusCore.Models
     /// </summary>
     public class RadValueModel
     {
-        /// <summary>
-        /// Thing ID
-        /// </summary>
-        [Required]
-        public Guid ID { get; set; } = Guid.NewGuid();
+
 
         /// <summary>
         /// Thing ID
         /// </summary>
         [Required]
-        public Guid ThingID { get; set; } = Guid.NewGuid();
+        public string ID { get; set; } = Guid.NewGuid().ToString();
+
+
+
+        /// <summary>
+        /// Thing ID
+        /// </summary>
+        [Required]
+        public string ThingID { get; set; }
 
         /// <summary>
         /// Process Value representation - Also known as Tag Name
         /// </summary>
-        [Required]
-        public Guid PV { get; set; } = Guid.NewGuid();
+        public string PV { get; set; }
 
         /// <summary>
         /// Display Name
@@ -59,13 +62,13 @@ namespace RadiusCore.Models
         /// <summary>
         /// DataType
         /// </summary>
-        public Guid DataType { get; set; } = Guid.NewGuid();
+        public string DataType { get; set; } 
 
         /// <summary>
         /// Source of data
         /// </summary>
         [Required]
-        public Guid Source { get; set; } = Guid.NewGuid();
+        public string Source { get; set; }
 
         /// <summary>
         /// Value of data point
